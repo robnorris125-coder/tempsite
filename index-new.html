@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rob Norris Consulting | Participation, Retention, and Growth for Tennis Businesses</title>
+  <meta name="description" content="Premium discovery calls and commercial audits for tennis clubs, coaches, academies, and tennis leaders who want stronger revenue, better retention, and clearer commercial decisions." />
+  <meta name="theme-color" content="#111214" />
+  <style>
+    :root {
+      --bg: #0f1113;
+      --bg-soft: #171a1f;
+      --panel: #1b1f25;
+      --panel-2: #232932;
+      --text: #f5efe4;
+      --muted: #b8b0a4;
+      --soft: #e9dfd1;
+      --gold: #d4ad63;
+      --gold-2: #efd39a;
+      --green: #617d68;
+      --ivory: #f8f4ee;
+      --ivory-2: #f2ece3;
+      --line: rgba(216, 179, 106, 0.22);
+      --shadow: 0 24px 60px rgba(0,0,0,0.26);
+      --radius: 24px;
+      --container: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #111214 0%, #16181d 100%);
+      line-height: 1.55;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--container), calc(100% - 40px)); margin: 0 auto; }
+    .serif { font-family: Georgia, "Times New Roman", serif; }
+
+    .site-header {
+      position: sticky; top: 0; z-index: 40;
+      backdrop-filter: blur(16px);
+      background: rgba(17,18,20,0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; min-height: 80px;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 14px; font-weight: 600; letter-spacing: 0.02em;
+    }
+    .brand-mark {
+      width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
+      color: #111214; font-weight: 700;
+      background: linear-gradient(135deg, var(--gold-2), var(--gold));
+      box-shadow: 0 10px 24px rgba(216,179,106,.25);
+    }
+    .nav-links { display: flex; gap: 22px; color: var(--muted); font-size: 14px; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-actions { display: flex; gap: 12px; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 10px; min-height: 50px; padding: 0 22px; border-radius: 999px;
+      border: 1px solid transparent; font-weight: 600; font-size: 15px;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      color: #151515; background: linear-gradient(135deg, var(--gold-2), var(--gold));
+      box-shadow: 0 16px 36px rgba(216,179,106,.24);
+    }
+    .btn-primary:hover { box-shadow: 0 20px 42px rgba(216,179,106,.32); }
+    .btn-secondary {
+      background: rgba(255,255,255,0.02); color: var(--text); border-color: rgba(255,255,255,.12);
+    }
+    .btn-secondary:hover { border-color: var(--line); background: rgba(255,255,255,0.05); }
+
+    .hero {
+      position: relative; overflow: hidden;
+      padding: 72px 0 64px;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(216,179,106,.16), transparent 32%),
+        radial-gradient(circle at 85% 20%, rgba(95,125,107,.18), transparent 24%),
+        linear-gradient(180deg, rgba(255,255,255,.02), transparent);
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line);
+      background: rgba(255,255,255,.03); color: var(--soft); font-size: 13px; letter-spacing: .08em; text-transform: uppercase;
+    }
+    .hero h1 {
+      margin: 20px 0 18px; font-size: clamp(42px, 6vw, 72px); line-height: .95; font-weight: 500;
+      letter-spacing: -0.03em;
+    }
+    .hero p.lead {
+      margin: 0 0 26px; color: var(--muted); font-size: clamp(18px, 2.1vw, 22px); max-width: 680px;
+    }
+    .proof-row {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 28px 0 30px;
+    }
+    .proof-card {
+      padding: 18px 18px 16px; border-radius: 18px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08);
+    }
+    .proof-card strong { display: block; font-size: 20px; color: var(--text); margin-bottom: 4px; }
+    .proof-card span { color: var(--muted); font-size: 14px; }
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-note { margin-top: 18px; color: var(--muted); font-size: 15px; }
+
+    .hero-visual {
+      position: relative; isolation: isolate;
+    }
+    .image-shell {
+      position: relative; border-radius: 32px; overflow: hidden; box-shadow: var(--shadow);
+      min-height: 620px; border: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.36));
+    }
+    .image-shell img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center 18%; filter: saturate(.95) contrast(1.02);
+    }
+    .image-shell::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(17,18,20,.02) 0%, rgba(17,18,20,.14) 45%, rgba(17,18,20,.72) 100%);
+    }
+    .overlay-card {
+      position: absolute; left: 24px; right: 24px; bottom: 24px; z-index: 1;
+      padding: 22px; border-radius: 22px; background: rgba(17,18,20,.64); backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .overlay-card .small { color: var(--gold-2); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+    .overlay-card h3 { margin: 10px 0 8px; font-size: 28px; line-height: 1.02; font-weight: 500; }
+    .overlay-card p { margin: 0; color: var(--muted); font-size: 15px; }
+
+    .section {
+      padding: 96px 0;
+      background: var(--ivory);
+      color: #1c1d20;
+    }
+    .section.alt {
+      background: linear-gradient(180deg, var(--ivory) 0%, var(--ivory-2) 100%);
+    }
+    .section.dark {
+      background: linear-gradient(180deg, #14171c 0%, #101215 100%);
+      color: var(--text);
+    }
+    .section-head {
+      max-width: 800px; margin-bottom: 40px;
+    }
+    .kicker {
+      margin-bottom: 10px; color: #8a734a; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700;
+    }
+    .dark .kicker { color: var(--gold-2); }
+    .section h2 {
+      margin: 0 0 14px; font-size: clamp(34px, 4vw, 54px); line-height: .98; font-weight: 500;
+      font-family: Georgia, "Times New Roman", serif; letter-spacing: -.02em;
+    }
+    .section p.intro, .section-head p {
+      margin: 0; font-size: 18px; color: #57534b;
+    }
+    .dark .section-head p, .dark p.intro { color: var(--muted); }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    .card {
+      padding: 28px; border-radius: 24px; background: #fff; border: 1px solid rgba(17,18,20,.08); box-shadow: 0 16px 36px rgba(17,18,20,.05);
+    }
+    .dark .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border-color: rgba(255,255,255,.08); box-shadow: none;
+    }
+    .card h3 {
+      margin: 0 0 10px; font-size: 25px; line-height: 1.06; font-weight: 500; font-family: Georgia, "Times New Roman", serif;
+    }
+    .card p { margin: 0; color: #5f5a50; }
+    .dark .card p { color: var(--muted); }
+
+    .mini-list { display: grid; gap: 10px; margin-top: 14px; }
+    .mini-list div {
+      display: flex; gap: 12px; align-items: flex-start; color: inherit;
+    }
+    .bullet {
+      width: 9px; height: 9px; border-radius: 50%; background: var(--gold); margin-top: 8px; flex: 0 0 auto;
+      box-shadow: 0 0 0 7px rgba(216,179,106,.12);
+    }
+
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .step { position: relative; padding: 30px; border-radius: 26px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); }
+    .step-num {
+      width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--gold-2), var(--gold)); color: #171717; font-weight: 700; margin-bottom: 18px;
+    }
+    .step h3 { margin: 0 0 12px; font-size: 26px; font-weight: 500; font-family: Georgia, "Times New Roman", serif; }
+    .step p { margin: 0; color: var(--muted); }
+
+    .price-card {
+      display: grid; grid-template-columns: 1.05fr .95fr; gap: 26px; align-items: stretch;
+    }
+    .audit-panel {
+      padding: 32px; border-radius: 28px; background: linear-gradient(180deg, #fff 0%, #f7f1e8 100%); border: 1px solid rgba(17,18,20,.08);
+      box-shadow: 0 20px 42px rgba(17,18,20,.06);
+    }
+    .audit-panel.dark {
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)); border-color: rgba(255,255,255,.08);
+      color: var(--text); box-shadow: none;
+    }
+    .price {
+      margin: 16px 0 6px; font-size: clamp(48px, 6vw, 80px); line-height: .9; font-family: Georgia, "Times New Roman", serif; font-weight: 500;
+    }
+    .currency-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+    .chip {
+      padding: 8px 12px; border-radius: 999px; background: rgba(216,179,106,.14); color: #7a5a24; font-size: 13px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+      border: 1px solid transparent; transition: background .18s ease, border-color .18s ease, transform .18s ease, color .18s ease;
+    }
+    button.chip { cursor: pointer; font: inherit; }
+    .chip:hover { transform: translateY(-1px); }
+    .chip.active {
+      background: linear-gradient(135deg, var(--gold-2), var(--gold));
+      color: #151515; border-color: rgba(240,216,160,.9);
+      box-shadow: 0 10px 24px rgba(216,179,106,.22);
+    }
+    .dark .chip { color: var(--gold-2); background: rgba(216,179,106,.12); }
+    .dark .chip.active { color: #151515; background: linear-gradient(135deg, var(--gold-2), var(--gold)); }
+
+    .check-list { display: grid; gap: 14px; margin-top: 20px; }
+    .check-item { display: flex; gap: 12px; align-items: flex-start; }
+    .check-item .tick {
+      width: 22px; height: 22px; border-radius: 50%; background: rgba(216,179,106,.18); color: #7a5a24; display: grid; place-items: center; font-size: 14px; font-weight: 700; flex: 0 0 auto;
+    }
+    .dark .check-item .tick { color: var(--gold-2); }
+
+    .results-band {
+      padding: 28px; border-radius: 24px; background: linear-gradient(135deg, rgba(216,179,106,.12), rgba(95,125,107,.12)); border: 1px solid rgba(216,179,106,.18);
+    }
+    .results-layout {
+      display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; align-items: center;
+    }
+    .results-copy {
+      display: grid; gap: 24px;
+    }
+    .results-photo {
+      position: relative; overflow: hidden; min-height: 0; max-width: 360px; width: 100%;
+      margin: 0 auto; align-self: center;
+      border-radius: 24px; border: 1px solid rgba(255,255,255,.08);
+      background: #121418;
+      box-shadow: 0 18px 40px rgba(17,18,20,.08);
+      aspect-ratio: 4 / 5;
+    }
+    .results-photo img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center 18%;
+      filter: saturate(.96) contrast(1.02);
+    }
+    .results-photo::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(17,18,20,.04) 0%, rgba(17,18,20,.12) 38%, rgba(17,18,20,.72) 100%);
+    }
+    .results-photo-badge {
+      position: absolute; left: 18px; right: 18px; bottom: 18px; z-index: 1;
+      padding: 16px 18px; border-radius: 18px;
+      background: rgba(17,18,20,.66); backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.08); color: var(--text);
+    }
+    .results-photo-badge strong {
+      display: block; font-size: 24px; line-height: 1.02; font-family: Georgia, "Times New Roman", serif; font-weight: 500;
+    }
+    .results-photo-badge span {
+      display: block; margin-top: 6px; color: var(--muted); font-size: 14px;
+    }
+    .about-grid {
+      display: grid; grid-template-columns: .88fr 1.12fr; gap: 28px; align-items: center;
+    }
+    .about-photo-card {
+      position: relative; overflow: hidden; border-radius: 28px; min-height: 520px;
+      border: 1px solid rgba(17,18,20,.08); box-shadow: 0 18px 40px rgba(17,18,20,.07);
+      background: #d9d4cb;
+    }
+    .about-photo-card img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center 18%; display: block;
+    }
+    .about-photo-card::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(17,18,20,.02) 0%, rgba(17,18,20,.12) 48%, rgba(17,18,20,.62) 100%);
+    }
+    .about-photo-badge {
+      position: absolute; left: 20px; right: 20px; bottom: 20px; z-index: 1;
+      padding: 16px 18px; border-radius: 18px; color: #fff;
+      background: rgba(17,18,20,.58); backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    .about-photo-badge .small {
+      display: block; color: var(--gold-2); font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .about-photo-badge strong {
+      display: block; margin-top: 8px; font-size: 28px; line-height: 1.02; font-family: Georgia, "Times New Roman", serif; font-weight: 500;
+    }
+    .about-photo-badge span {
+      display: block; margin-top: 6px; color: var(--muted); font-size: 14px;
+    }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .stat strong { display: block; font-size: 34px; line-height: 1; margin-bottom: 8px; font-family: Georgia, "Times New Roman", serif; font-weight: 500; }
+    .stat span { color: var(--muted); font-size: 14px; }
+
+    .form-wrap {
+      display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; align-items: start;
+    }
+    .form-card {
+      padding: 30px; border-radius: 28px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+    }
+    .field { display: grid; gap: 8px; }
+    .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .field.full { grid-column: 1 / -1; }
+    label { font-size: 14px; color: var(--soft); }
+    input, select, textarea {
+      width: 100%; border-radius: 16px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.03);
+      color: #fff; padding: 15px 16px; font: inherit; outline: none;
+    }
+    select {
+      appearance: none; -webkit-appearance: none; -moz-appearance: none;
+      background-image:
+        linear-gradient(45deg, transparent 50%, var(--gold-2) 50%),
+        linear-gradient(135deg, var(--gold-2) 50%, transparent 50%),
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.04));
+      background-position:
+        calc(100% - 22px) calc(50% - 3px),
+        calc(100% - 16px) calc(50% - 3px),
+        0 0;
+      background-size: 6px 6px, 6px 6px, 100% 100%;
+      background-repeat: no-repeat;
+      padding-right: 46px;
+      cursor: pointer;
+    }
+    select option {
+      background: #1d2127;
+      color: #f5efe4;
+    }
+    input::placeholder, textarea::placeholder { color: rgba(255,255,255,.42); }
+    textarea { min-height: 140px; resize: vertical; }
+    input:focus, select:focus, textarea:focus { border-color: rgba(216,179,106,.5); box-shadow: 0 0 0 4px rgba(216,179,106,.08); }
+    .form-note {
+      margin-top: 18px; font-size: 14px; color: var(--muted);
+    }
+    .success-box {
+      display: none; margin-top: 18px; padding: 16px 18px; border-radius: 16px; background: rgba(95,125,107,.18); color: var(--soft); border: 1px solid rgba(95,125,107,.38);
+    }
+
+    .process-list { display: grid; gap: 16px; margin-top: 18px; }
+    .process-step {
+      padding: 18px 18px 18px 20px; border-radius: 20px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08);
+    }
+    .process-step strong { display: block; margin-bottom: 8px; font-size: 19px; font-family: Georgia, "Times New Roman", serif; font-weight: 500; }
+    .process-step p { margin: 0; color: var(--muted); }
+
+
+    .about-grid {
+      display: grid; grid-template-columns: .96fr 1.04fr; gap: 28px; align-items: stretch;
+    }
+    .identity-pair {
+      display: grid; grid-template-columns: 1.05fr .82fr; gap: 18px; align-items: stretch;
+    }
+    .identity-card {
+      position: relative; overflow: hidden; min-height: 420px;
+      border-radius: 28px; background: #121418; border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 18px 40px rgba(17,18,20,.08);
+    }
+    .identity-card img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center 16%;
+      filter: saturate(.96) contrast(1.02);
+    }
+    .support-card {
+      position: relative; overflow: hidden; min-height: 420px;
+      border-radius: 28px; background: #121418; border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 18px 40px rgba(17,18,20,.08);
+    }
+    .support-card img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center 18%;
+      filter: saturate(.98) contrast(1.02);
+    }
+    .support-card::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(17,18,20,.02) 0%, rgba(17,18,20,.18) 44%, rgba(17,18,20,.68) 100%);
+    }
+    .support-badge {
+      position: absolute; left: 14px; right: 14px; bottom: 14px; z-index: 1;
+      padding: 12px 14px; border-radius: 16px;
+      background: rgba(17,18,20,.62); backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,.08); color: var(--text);
+    }
+    .support-badge strong { display:block; font-size: 18px; font-family: Georgia, "Times New Roman", serif; font-weight:500; }
+    .support-badge span { display:block; margin-top: 4px; color: var(--muted); font-size: 12px; }
+    .identity-card::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(17,18,20,.04) 0%, rgba(17,18,20,.18) 38%, rgba(17,18,20,.82) 100%);
+    }
+    .identity-overlay {
+      position: absolute; left: 18px; right: 18px; bottom: 18px; z-index: 1;
+      padding: 18px; border-radius: 20px;
+      background: rgba(17,18,20,.66); backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.08);
+      color: var(--text);
+    }
+    .identity-overlay .small {
+      display: block; margin-bottom: 8px; color: var(--gold-2);
+      font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .identity-overlay strong {
+      display: block; font-size: 28px; line-height: 1.02; font-family: Georgia, "Times New Roman", serif; font-weight: 500;
+    }
+    .identity-overlay span {
+      display: block; margin-top: 6px; color: var(--muted); font-size: 14px;
+    }
+
+    .quote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .quote {
+      position: relative; padding: 34px 28px 28px; border-radius: 28px; background: #fff; border: 1px solid rgba(17,18,20,.08); box-shadow: 0 18px 40px rgba(17,18,20,.05);
+    }
+    .quote::before {
+      content: "“"; position: absolute; top: 14px; left: 18px; font-size: 64px; line-height: 1; color: rgba(216,179,106,.36); font-family: Georgia, serif;
+    }
+    .quote p { margin: 18px 0 22px; font-size: 18px; color: #2a2b2f; }
+    .quote strong { display: block; font-size: 15px; color: #7a5a24; text-transform: uppercase; letter-spacing: .04em; }
+
+    .faq-list { display: grid; gap: 14px; }
+    details {
+      border-radius: 18px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); padding: 18px 20px;
+    }
+    summary {
+      list-style: none; cursor: pointer; font-weight: 600; display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    }
+    summary::-webkit-details-marker { display: none; }
+    details p { margin: 12px 0 0; color: var(--muted); }
+
+    .contact-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 26px; }
+    .contact-pill {
+      padding: 16px 18px; border-radius: 18px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+      min-width: 210px; transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease;
+    }
+    .contact-pill:hover {
+      transform: translateY(-2px);
+      border-color: rgba(216,179,106,.34);
+      background: rgba(255,255,255,.06);
+      box-shadow: 0 14px 28px rgba(0,0,0,.18);
+    }
+    .contact-pill {
+      display: flex; align-items: center; gap: 14px;
+    }
+    .contact-icon {
+      width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center;
+      background: rgba(216,179,106,.14); color: var(--gold-2); flex: 0 0 auto;
+      border: 1px solid rgba(216,179,106,.18);
+    }
+    .contact-icon svg { width: 22px; height: 22px; }
+    .contact-copy { min-width: 0; }
+    .contact-pill .label { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--gold-2); }
+    .contact-pill .value { margin-top: 6px; color: var(--text); font-weight: 600; word-break: break-word; }
+
+    .final-cta {
+      padding: 38px; border-radius: 30px; background: linear-gradient(135deg, rgba(216,179,106,.18), rgba(95,125,107,.2));
+      border: 1px solid rgba(216,179,106,.22);
+      display: flex; justify-content: space-between; gap: 24px; align-items: center;
+    }
+    .final-cta h3 { margin: 0 0 10px; font-size: clamp(30px, 4vw, 48px); line-height: .98; font-family: Georgia, serif; font-weight: 500; }
+    .final-cta p { margin: 0; color: var(--muted); max-width: 680px; }
+    .final-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    footer {
+      padding: 28px 0 38px; border-top: 1px solid rgba(255,255,255,.08); background: #0f1012;
+    }
+    .footer-row { display: flex; justify-content: space-between; gap: 20px; align-items: center; color: var(--muted); font-size: 14px; }
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .footer-brand { color: var(--text); font-weight: 600; }
+
+    @media (max-width: 1080px) {
+      .hero-grid, .price-card, .form-wrap, .grid-2, .about-grid, .identity-pair, .final-cta, .results-layout { grid-template-columns: 1fr; display: grid; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .grid-3, .steps, .quote-grid { grid-template-columns: 1fr; }
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .hero-visual { order: -1; }
+      .image-shell { min-height: 520px; }
+    }
+    @media (max-width: 860px) {
+      .nav { flex-wrap: wrap; padding: 16px 0; }
+      .nav-links { order: 3; width: 100%; justify-content: center; flex-wrap: wrap; }
+      .proof-row { grid-template-columns: 1fr; }
+      .form-grid, .grid-4 { grid-template-columns: 1fr; }
+      .hero { padding-top: 48px; }
+      .section { padding: 78px 0; }
+    }
+    @media (max-width: 580px) {
+      .container { width: min(var(--container), calc(100% - 24px)); }
+      .nav-actions { width: 100%; }
+      .nav-actions .btn { flex: 1 1 auto; }
+      .final-cta { padding: 28px 22px; }
+      .stats { grid-template-columns: 1fr; }
+      .footer-row { flex-direction: column; align-items: flex-start; }
+      .image-shell { min-height: 420px; }
+    }
+  
+footer{
+  padding:48px 24px 56px;
+}
+.footer-inner{
+  max-width:1100px;
+  margin:0 auto;
+  text-align:center;
+}
+.footer-brand{
+  margin-bottom:8px;
+}
+.footer-tagline{
+  margin-bottom:10px;
+}
+.footer-copy{
+  opacity:.85;
+}
+
+
+footer{
+  padding:48px 24px 56px;
+}
+.footer-inner{
+  max-width:1100px;
+  margin:0 auto;
+}
+.footer-two-col{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:24px;
+}
+.footer-left{
+  text-align:left;
+}
+.footer-right{
+  text-align:right;
+  margin-left:auto;
+}
+.footer-brand{
+  margin-bottom:8px;
+}
+.footer-tagline{
+  opacity:.9;
+}
+.footer-copy{
+  opacity:.85;
+}
+@media (max-width: 768px){
+  .footer-two-col{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+  .footer-left,
+  .footer-right{
+    text-align:center;
+    margin-left:0;
+  }
+}
+
+</style>
+
+<style id="world-class-tennis-palette">
+  :root{
+    --bg-dark:#111417;
+    --bg-dark-2:#171B20;
+    --bg-light:#F7F3EC;
+    --card-light:#FCFAF6;
+    --text-dark:#18212A;
+    --text-body:#49545F;
+    --text-light:#F2EEE7;
+    --text-light-muted:#D7D1C7;
+    --green:#1F6B4F;
+    --green-hover:#2B7A5B;
+    --gold:#C6A86A;
+    --border-light:rgba(24,33,42,.10);
+    --border-dark:rgba(242,238,231,.08);
+    --shadow-soft:0 16px 36px rgba(17,20,23,.08);
+    --shadow-dark:0 24px 60px rgba(0,0,0,.22);
+  }
+
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--bg-dark) !important;
+    color: var(--text-light) !important;
+  }
+
+  .site-header{
+    background: rgba(17,20,23,.92) !important;
+    border-bottom: 1px solid var(--border-dark) !important;
+    backdrop-filter: blur(10px);
+  }
+
+  .brand, .brand a, .brand-name,
+  .nav a{
+    color: var(--text-light) !important;
+  }
+
+  .nav a:hover{
+    color: var(--gold) !important;
+  }
+
+  .hero{
+    background:
+      radial-gradient(circle at 12% 14%, rgba(198,168,106,.12), transparent 28%),
+      radial-gradient(circle at 88% 16%, rgba(31,107,79,.16), transparent 24%),
+      linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-dark-2) 100%) !important;
+    padding-top: 88px !important;
+    padding-bottom: 76px !important;
+  }
+
+  .hero h1, .hero h2, .hero h3,
+  .dark h1, .dark h2, .dark h3,
+  footer h1, footer h2, footer h3{
+    color: var(--text-light) !important;
+  }
+
+  .hero p, .hero .lead, .hero-note,
+  .dark p, .dark li, .dark span,
+  footer p, footer span, footer div{
+    color: var(--text-light-muted) !important;
+  }
+
+  .eyebrow, .kicker{
+    color: var(--gold) !important;
+    border-color: rgba(198,168,106,.25) !important;
+    background: rgba(198,168,106,.06) !important;
+  }
+
+  .proof-card,
+  .step,
+  .final-cta,
+  .contact-pill{
+    background: rgba(255,255,255,.025) !important;
+    border: 1px solid var(--border-dark) !important;
+    box-shadow: var(--shadow-dark) !important;
+  }
+
+  .proof-card strong,
+  .proof-card .number,
+  .stat strong,
+  .number,
+  .price,
+  .price-amount,
+  .highlight{
+    color: var(--gold) !important;
+  }
+
+  .proof-card span,
+  .step p,
+  .step span,
+  .final-cta p,
+  .contact-pill span{
+    color: var(--text-light-muted) !important;
+  }
+
+  .btn-primary,
+  .primary-btn,
+  button.primary,
+  .cta-primary{
+    background: var(--green) !important;
+    color: var(--text-light) !important;
+    border: 1px solid var(--green) !important;
+    box-shadow: 0 14px 32px rgba(31,107,79,.24) !important;
+  }
+
+  .btn-primary:hover,
+  .primary-btn:hover,
+  button.primary:hover,
+  .cta-primary:hover{
+    background: var(--green-hover) !important;
+    border-color: var(--green-hover) !important;
+  }
+
+  .btn-secondary,
+  .secondary-btn,
+  .cta-secondary{
+    background: transparent !important;
+    color: var(--text-light) !important;
+    border: 1px solid rgba(242,238,231,.24) !important;
+  }
+
+  .btn-secondary:hover,
+  .secondary-btn:hover,
+  .cta-secondary:hover{
+    border-color: var(--gold) !important;
+    color: var(--gold) !important;
+  }
+
+  a{
+    color: var(--green) !important;
+  }
+  .dark a, .hero a, footer a, .site-header a{
+    color: var(--text-light) !important;
+  }
+  a:hover{
+    color: var(--green-hover) !important;
+  }
+  .dark a:hover, .hero a:hover, footer a:hover, .site-header a:hover{
+    color: var(--gold) !important;
+  }
+
+  /* Light sections */
+  .light,
+  .light-section,
+  .section-light,
+  .bg-light,
+  .bg-white,
+  .bg-ivory,
+  .white-section,
+  .white-panel,
+  .cream,
+  .offwhite,
+  .results-section,
+  .authority-section,
+  .about-section,
+  .faq-section,
+  section[style*="background: #fff"],
+  section[style*="background:#fff"],
+  section[style*="background: #ffffff"],
+  section[style*="background:#ffffff"],
+  section[style*="background: white"],
+  section[style*="background:white"],
+  section[style*="background-color: #fff"],
+  section[style*="background-color:#fff"],
+  section[style*="background-color: #ffffff"],
+  section[style*="background-color:#ffffff"],
+  section[style*="background-color: white"],
+  section[style*="background-color:white"]{
+    background: var(--bg-light) !important;
+    color: var(--text-dark) !important;
+  }
+
+  .light h1, .light h2, .light h3, .light h4, .light h5, .light h6,
+  .light-section h1, .light-section h2, .light-section h3, .light-section h4, .light-section h5, .light-section h6,
+  .section-light h1, .section-light h2, .section-light h3, .section-light h4, .section-light h5, .section-light h6,
+  .bg-light h1, .bg-light h2, .bg-light h3, .bg-light h4, .bg-light h5, .bg-light h6,
+  .bg-white h1, .bg-white h2, .bg-white h3, .bg-white h4, .bg-white h5, .bg-white h6,
+  .bg-ivory h1, .bg-ivory h2, .bg-ivory h3, .bg-ivory h4, .bg-ivory h5, .bg-ivory h6,
+  .white-section h1, .white-section h2, .white-section h3, .white-section h4, .white-section h5, .white-section h6,
+  .white-panel h1, .white-panel h2, .white-panel h3, .white-panel h4, .white-panel h5, .white-panel h6,
+  .cream h1, .cream h2, .cream h3, .cream h4, .cream h5, .cream h6,
+  .offwhite h1, .offwhite h2, .offwhite h3, .offwhite h4, .offwhite h5, .offwhite h6,
+  .results-section h1, .results-section h2, .results-section h3, .results-section h4, .results-section h5, .results-section h6,
+  .authority-section h1, .authority-section h2, .authority-section h3, .authority-section h4, .authority-section h5, .authority-section h6,
+  .about-section h1, .about-section h2, .about-section h3, .about-section h4, .about-section h5, .about-section h6,
+  .faq-section h1, .faq-section h2, .faq-section h3, .faq-section h4, .faq-section h5, .faq-section h6{
+    color: var(--text-dark) !important;
+  }
+
+  .light p, .light li, .light span, .light label, .light small,
+  .light-section p, .light-section li, .light-section span, .light-section label, .light-section small,
+  .section-light p, .section-light li, .section-light span, .section-light label, .section-light small,
+  .bg-light p, .bg-light li, .bg-light span, .bg-light label, .bg-light small,
+  .bg-white p, .bg-white li, .bg-white span, .bg-white label, .bg-white small,
+  .bg-ivory p, .bg-ivory li, .bg-ivory span, .bg-ivory label, .bg-ivory small,
+  .white-section p, .white-section li, .white-section span, .white-section label, .white-section small,
+  .white-panel p, .white-panel li, .white-panel span, .white-panel label, .white-panel small,
+  .cream p, .cream li, .cream span, .cream label, .cream small,
+  .offwhite p, .offwhite li, .offwhite span, .offwhite label, .offwhite small,
+  .results-section p, .results-section li, .results-section span, .results-section label, .results-section small,
+  .authority-section p, .authority-section li, .authority-section span, .authority-section label, .authority-section small,
+  .about-section p, .about-section li, .about-section span, .about-section label, .about-section small,
+  .faq-section p, .faq-section li, .faq-section span, .faq-section label, .faq-section small{
+    color: var(--text-body) !important;
+  }
+
+  /* Light cards and panels */
+  .card:not(.dark),
+  .identity-card:not(.dark),
+  .quote,
+  .quote-card:not(.dark),
+  .audit-panel:not(.dark),
+  .price-panel:not(.dark),
+  .form-card:not(.dark),
+  .stat,
+  .results-photo.light{
+    background: var(--card-light) !important;
+    color: var(--text-dark) !important;
+    border: 1px solid var(--border-light) !important;
+    box-shadow: var(--shadow-soft) !important;
+  }
+
+  .card:not(.dark) h2, .card:not(.dark) h3, .card:not(.dark) h4,
+  .identity-card:not(.dark) h2, .identity-card:not(.dark) h3, .identity-card:not(.dark) h4,
+  .quote h2, .quote h3, .quote h4, .quote strong,
+  .audit-panel:not(.dark) h2, .audit-panel:not(.dark) h3, .audit-panel:not(.dark) h4,
+  .price-panel:not(.dark) h2, .price-panel:not(.dark) h3, .price-panel:not(.dark) h4,
+  .form-card:not(.dark) h2, .form-card:not(.dark) h3, .form-card:not(.dark) h4,
+  .stat strong{
+    color: var(--text-dark) !important;
+  }
+
+  .card:not(.dark) p, .card:not(.dark) li, .card:not(.dark) span,
+  .identity-card:not(.dark) p, .identity-card:not(.dark) li, .identity-card:not(.dark) span,
+  .quote p,
+  .audit-panel:not(.dark) p, .audit-panel:not(.dark) li, .audit-panel:not(.dark) span, .audit-panel:not(.dark) label,
+  .price-panel:not(.dark) p, .price-panel:not(.dark) li, .price-panel:not(.dark) span,
+  .form-card:not(.dark) p, .form-card:not(.dark) li, .form-card:not(.dark) span, .form-card:not(.dark) label,
+  .stat span{
+    color: var(--text-body) !important;
+  }
+
+  .results-section .number,
+  .authority-section .number,
+  .about-section .number,
+  .stats .stat strong,
+  .light .highlight,
+  .light-section .highlight,
+  .section-light .highlight{
+    color: var(--green) !important;
+  }
+
+  .results-section .kicker,
+  .authority-section .kicker,
+  .about-section .kicker,
+  .faq-section .kicker{
+    color: var(--green) !important;
+    background: rgba(31,107,79,.06) !important;
+    border-color: rgba(31,107,79,.14) !important;
+  }
+
+  .contact-icon, .icon-wrap, .social-icon{
+    background: rgba(31,107,79,.08) !important;
+    border: 1px solid rgba(31,107,79,.14) !important;
+    color: var(--green) !important;
+  }
+
+  input, select, textarea{
+    background: #fff !important;
+    color: var(--text-dark) !important;
+    border: 1px solid var(--border-light) !important;
+  }
+  input::placeholder, textarea::placeholder{
+    color: #7b858f !important;
+  }
+  input:focus, select:focus, textarea:focus{
+    border-color: var(--green) !important;
+    box-shadow: 0 0 0 3px rgba(31,107,79,.12) !important;
+    outline: none !important;
+  }
+  option{
+    background: #fff !important;
+    color: var(--text-dark) !important;
+  }
+
+  footer{
+    background: var(--bg-dark) !important;
+    border-top: 1px solid var(--border-dark) !important;
+  }
+  .footer-brand, .footer-copy{
+    color: var(--text-light) !important;
+  }
+  .footer-tagline{
+    color: var(--text-light-muted) !important;
+  }
+</style>
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Rob Norris Consulting home">
+        <span class="brand-mark">RN</span>
+        <span>Rob Norris Consulting</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#who-it-helps">Who It Helps</a>
+        <a href="#premium-audit">Audit</a>
+        <a href="#results">Results</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="https://calendly.com/robnorrisdiscoverycall/30min" target="_blank" rel="noopener">Book Discovery Call</a>
+        <a class="btn btn-primary" href="#audit-enquiry">Apply for Audit</a></div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Luxury sport consultancy for serious tennis businesses</div>
+          <h1 class="serif">Tennis Businesses Do Not Usually Break at Once. They Drift Until Performance Suffers.</h1>
+          <p class="lead">For tennis coaches, committee members, club managers, academies, programme directors, venue operators, and business owners who want stronger participation, better retention, higher coaching standards, and smarter commercial decisions.</p>
+
+          <div class="proof-row">
+            <div class="proof-card"><strong>30+ years</strong><span>Across tennis, coaching, participation, funding, and business performance.</span></div>
+            <div class="proof-card"><strong>320+ weekly juniors</strong><span>Grown from just 7 weekly participants in one club programme.</span></div>
+            <div class="proof-card"><strong>5,500+ member club</strong><span>Hands-on operational leadership in a large tennis and health club setting.</span></div>
+          </div>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="https://calendly.com/robnorrisdiscoverycall/30min" target="_blank" rel="noopener">Book Discovery Call</a>
+            <a class="btn btn-secondary" href="#premium-audit">Explore the Premium Audit</a></div>
+          <div class="hero-note">Identify missed opportunities, improve retention, strengthen your offer, and make better business decisions with an experienced outside view.</div></div>
+
+        <div class="hero-visual">
+          <div class="image-shell">
+            <img src="IMG_2568.JPG" alt="Rob Norris, founder of Rob Norris Consulting" />
+            <div class="overlay-card">
+              <div class="small">Rob Norris Consulting</div>
+              <h3 class="serif">Rob Norris</h3>
+              <p>Tennis business consultant helping clubs, coaches, academies, and operators improve revenue, retention, and commercial clarity.</p></div>
+          </div></div>
+      </div>
+    </section>
+
+    <section class="section alt" id="who-it-helps">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Who It Helps</div>
+          <h2>Built for the People Responsible for Standards, Participation, and Growth</h2>
+          <p>Whether you run a club, lead a programme, coach players, or oversee commercial decisions, the right outside perspective makes it easier to see where performance, value, and growth are being held back.</p></div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Tennis Coaches</h3>
+            <p>Improve pricing, retention, package value, and programme structure.</p>
+          </article>
+          <article class="card">
+            <h3>Clubs &amp; Committees</h3>
+            <p>Get an outside commercial perspective on what may be limiting growth or member value.</p>
+          </article>
+          <article class="card">
+            <h3>Club Managers &amp; Leaders</h3>
+            <p>Strengthen decision-making, improve performance, and create a clearer commercial direction.</p>
+          </article>
+          <article class="card">
+            <h3>Academies &amp; Programme Directors</h3>
+            <p>Review pathways, pricing, staffing, and long-term growth opportunities.</p>
+          </article>
+          <article class="card">
+            <h3>Venue Operators</h3>
+            <p>Increase utilisation, sharpen the customer journey, and unlock missed value.</p>
+          </article>
+          <article class="card">
+            <h3>Tennis Business Owners</h3>
+            <p>Bring structure to growth decisions and tighten the commercial foundations of the business.</p>
+          </article></div>
+      </div>
+    </section>
+
+    <section class="section" id="problems">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">What This Helps Improve</div>
+          <h2>Where Performance, Retention, and Revenue Commonly Start to Drift</h2>
+          <p>The biggest issues are not always obvious when you are close to the day-to-day operation. Membership can plateau. Coaches can underperform. Revenue can become fragile. This work is designed to uncover the gaps in structure, standards, retention, and commercial performance that often sit in plain sight.</p></div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Membership and Revenue Pressure</h3>
+            <p>Plateaued membership, underused courts, weak packages, fragile pricing, and missed commercial opportunities quietly reduce performance over time.</p>
+          </article>
+          <article class="card">
+            <h3>Retention and Experience Gaps</h3>
+            <p>Low perceived value, weak customer journeys, unclear progression, and avoidable drop-off make it harder to keep members, players, and clients engaged.</p>
+          </article>
+          <article class="card">
+            <h3>Coach and Programme Performance</h3>
+            <p>Inconsistent standards, unclear programme design, and underdeveloped coaching structures hold back player experience and long-term business growth.</p>
+          </article></div>
+      </div>
+    </section>
+
+    <section class="section dark" id="how-it-works">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">How It Works</div>
+          <h2>A Clear Path to Stronger Performance and Growth</h2>
+          <p>Designed to move from initial clarity into focused action, without confusion, friction, or wasted time.</p></div>
+        <div class="steps">
+          <article class="step">
+            <div class="step-num">1</div>
+            <h3>Book the discovery call</h3>
+            <p>Start with a focused conversation about your current position, your challenges, and what you want to improve.</p>
+          </article>
+          <article class="step">
+            <div class="step-num">2</div>
+            <h3>Get an experienced outside view</h3>
+            <p>Identify likely blind spots, commercial pressure points, and the areas most worth exploring further.</p>
+          </article>
+          <article class="step">
+            <div class="step-num">3</div>
+            <h3>Move into the premium audit</h3>
+            <p>Receive a deeper review, practical recommendations, and a prioritised plan for improvement.</p>
+          </article></div>
+      </div>
+    </section>
+
+    <section class="section alt" id="discovery-call">
+      <div class="container price-card">
+        <div class="audit-panel">
+          <div class="kicker">Discovery Call</div>
+          <h2>Start With a Focused Discovery Call</h2>
+          <p class="intro">A free 30-minute conversation to talk through your current setup, where things may be underperforming, and whether a premium audit is the right next step.</p>
+          <div class="check-list">
+            <div class="check-item"><div class="tick">✓</div><div>Revenue blind spots</div></div>
+            <div class="check-item"><div class="tick">✓</div><div>Retention issues and customer journey gaps</div></div>
+            <div class="check-item"><div class="tick">✓</div><div>Programme and pricing structure</div></div>
+            <div class="check-item"><div class="tick">✓</div><div>Commercial priorities and best next action</div></div>
+          </div>
+          <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="https://calendly.com/robnorrisdiscoverycall/30min" target="_blank" rel="noopener">Book Your Discovery Call</a></div>
+        </div>
+        <div class="audit-panel">
+          <div class="kicker">Value</div>
+          <h2>What This Can Unlock for Your Club, Programme, or Tennis Business</h2>
+          <p class="intro">The aim is to show where participation, retention, coaching quality, and commercial performance can be strengthened most effectively.</p>
+          <div class="mini-list">
+            <div><span>Stronger pricing confidence</span></div>
+            <div><span>Better retention and client or member value</span></div>
+            <div><span>Clearer programme and offer structure</span></div>
+            <div><span>Smarter commercial decisions</span></div>
+            <div><span>Better use of time, resources, and opportunity</span></div>
+            <div><span>Greater confidence in where to focus next</span></div>
+          </div></div>
+      </div>
+    </section>
+
+    <section class="section dark" id="premium-audit">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Premium Audit</div>
+          <h2>The Premium Audit</h2>
+          <p>A high-value strategic review for tennis businesses that want clearer direction, better decisions, and measurable improvement.</p></div>
+        <div class="price-card">
+          <div class="audit-panel dark">
+            <div class="kicker">Investment</div>
+            <div class="price serif" id="displayPrice">£495</div>
+            <p class="intro" style="margin-bottom:14px;">Select your preferred currency below before continuing to payment.</p>
+            <div class="currency-row" id="currencyChips">
+              <button class="chip active" type="button" data-currency="GBP">GBP</button>
+              <button class="chip" type="button" data-currency="USD">USD</button>
+              <button class="chip" type="button" data-currency="EUR">EUR</button>
+              <button class="chip" type="button" data-currency="AUD">AUD</button></div>
+            <p class="intro" id="selectedCurrencySummary" style="margin:0 0 12px; color:var(--soft); font-size:15px;">Selected currency: GBP • Investment: £495</p>
+            <p class="intro" style="margin:0 0 12px; color:var(--gold-2); font-size:15px;">Secure payment via Stripe</p>
+            <p class="intro">Designed for tennis businesses that want more than ideas and need clear, commercially useful direction.</p>
+            <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+              <a class="btn btn-primary" href="#audit-enquiry">Apply for the Premium Audit</a></div>
+          </div>
+          <div class="audit-panel dark">
+            <div class="kicker">What Is Included</div>
+            <div class="check-list">
+              <div class="check-item"><div class="tick">✓</div><div>Review of pricing, programmes, packages, and utilisation</div></div>
+              <div class="check-item"><div class="tick">✓</div><div>Analysis of retention pressure points and customer or member journey gaps</div></div>
+              <div class="check-item"><div class="tick">✓</div><div>Review of value perception and commercial offer strength</div></div>
+              <div class="check-item"><div class="tick">✓</div><div>Identification of missed opportunities and underperforming areas</div></div>
+              <div class="check-item"><div class="tick">✓</div><div>Prioritised action points focused on the most important improvements</div></div>
+            </div></div>
+        </div></div>
+    </section>
+
+    <section class="section alt" id="results">
+      <div class="container">
+        <div class="results-band">
+          <div class="results-layout">
+            <div class="results-copy">
+              <div class="section-head" style="margin-bottom:0; max-width:780px;">
+                <div class="kicker">Results &amp; Authority</div>
+                <h2>Why Rob Norris</h2>
+                <p>With more than 30 years of experience across tennis, coaching, participation, funding, and business performance, Rob brings a practical outside view to the areas that most affect participation, retention, coaching quality, and growth. That includes growing one junior programme from 7 to over 320 weekly participants and managing tennis operations within a 5,500+ member club environment.</p></div>
+              <div class="stats">
+                <div class="stat"><strong>30+</strong><span>Years in tennis and sport</span></div>
+                <div class="stat"><strong>320+</strong><span>Weekly juniors built from a base of 7</span></div>
+                <div class="stat"><strong>5,500+</strong><span>Member club operational experience</span></div>
+                <div class="stat"><strong>UK + International</strong><span>Commercial perspective across markets</span></div>
+              </div></div>
+            <div class="results-photo">
+              <img src="1000010093.JPG" alt="Rob Norris at a professional tennis venue" />
+              <div class="results-photo-badge">
+                <strong>Rob Norris</strong>
+                <span>30+ years across tennis, coaching, participation, funding, and commercial performance</span></div>
+            </div></div>
+        </div></div>
+    </section>
+
+    <section class="section dark" id="audit-enquiry">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Audit Application</div>
+          <h2>Apply for the Premium Audit</h2>
+          <p>Complete the form below so Rob can review your business, your goals, and the areas you want to improve before payment.</p></div>
+
+        <div class="form-wrap">
+          <div class="form-card">
+            <form id="auditForm">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Your Name</label>
+                  <input id="name" name="name" placeholder="Full name" required /></div>
+                <div class="field">
+                  <label for="email">Email Address *</label>
+                  <input id="email" name="email" type="email" placeholder="your@email.com" required /></div>
+                <div class="field">
+                  <label for="organisation">Club / Business / Organisation</label>
+                  <input id="organisation" name="organisation" placeholder="Organisation name" required /></div>
+                <div class="field">
+                  <label for="role">Your Role</label>
+                  <select id="role" name="role" required>
+                    <option value="">Select your role</option>
+                    <option>Tennis Coach</option>
+                    <option>Committee Member</option>
+                    <option>Club Owner</option>
+                    <option>Club Manager</option>
+                    <option>Head of Tennis</option>
+                    <option>Programme Director</option>
+                    <option>Academy Leader</option>
+                    <option>Venue Operator</option>
+                    <option>Sports Business Owner</option>
+                    <option>Other</option>
+                  </select>
+                  <div style="font-size:12px; color:var(--muted);">Choose the role that best fits your responsibility.</div></div>
+                <div class="field">
+                  <label for="country">Country</label>
+                  <input id="country" name="country" placeholder="Country" required /></div>
+                <div class="field">
+                  <label for="currency">Preferred Currency *</label>
+                  <select id="currency" name="currency" required>
+                    <option value="">Select currency</option>
+                    <option value="GBP">GBP (£495)</option>
+                    <option value="USD">USD ($495)</option>
+                    <option value="EUR">EUR (€495)</option>
+                    <option value="AUD">AUD (A$495)</option>
+                  </select>
+                  <div style="font-size:12px; color:var(--muted);">Your selected currency decides the Stripe checkout link and displayed amount.</div></div>
+                <div class="field">
+                  <label for="phone">Phone / WhatsApp *</label>
+                  <input id="phone" name="phone" placeholder="Required for audit contact" required /></div>
+                <div class="field full">
+                  <label for="goals">What are you looking to achieve?</label>
+                  <textarea id="goals" name="goals" placeholder="Tell Rob what you want to improve, where things feel stuck, and what outcome you would most like to achieve." required></textarea></div>
+                <div class="field full">
+                  <label for="challenges">Current challenges</label>
+                  <textarea id="challenges" name="challenges" placeholder="Examples: retention, low coaching uptake, weak member value, flat revenue, underused court time, pricing, programming, structure, or growth planning."></textarea></div>
+              </div>
+              <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+                <button class="btn btn-primary" type="submit">Continue to Audit Payment</button></div>
+              <div class="form-note">Your email address, phone or WhatsApp number, and preferred currency are required before continuing to secure payment.</div>
+              <div class="success-box" id="auditSuccess">
+                <strong>Thank you. Your audit details have been prepared.</strong><br>
+                You will now continue to secure payment to confirm your premium audit. Once payment is successful, your place is confirmed and Rob can begin reviewing your submission.
+              </div>
+            </form></div>
+
+          <div class="form-card">
+            <div class="kicker">What Happens Next</div>
+            <h3 class="serif" style="margin:0 0 10px; font-size:32px; line-height:1.02; font-weight:500;">A Premium Process Should Feel Clear, Confident, and Well Handled</h3>
+            <p style="margin:0; color:var(--muted);">The premium audit should feel clear, credible, and well handled from the very first step.</p>
+            <div class="process-list">
+              <div class="process-step">
+                <strong>1. Complete the audit form</strong>
+                <p>Share who you are, what you are responsible for, and what results you want to improve.</p></div>
+              <div class="process-step">
+                <strong>2. Review your details</strong>
+                <p>Make sure your goals and current challenges are clearly explained so the audit starts with the right context.</p></div>
+              <div class="process-step">
+                <strong>3. Continue to payment</strong>
+                <p>After completing the form and reviewing your details, continue to payment to secure your audit. Once payment is complete, your place is confirmed and Rob can begin reviewing your submission.</p></div>
+            </div></div>
+        </div></div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-photo-card">
+          <img src="1000008729.JPG" alt="Rob Norris, founder of Rob Norris Consulting" />
+          <div class="about-photo-badge">
+            <span class="small">About Rob</span>
+            <strong>Rob Norris</strong>
+            <span>Founder, Rob Norris Consulting</span></div>
+        </div>
+        <div class="card" style="height:100%;">
+          <div class="section-head" style="margin-bottom:22px;">
+            <div class="kicker">About Rob</div>
+            <h2>A Background Built for Better Tennis Business Decisions</h2>
+            <p>Rob Norris brings more than 30 years of experience across tennis, coaching, participation, business performance, funding, and sport. He is an LTA Level 4 Licensed Tennis Coach who has built and led programmes across the UK and internationally, helping clubs of different sizes improve standards, develop coaches, grow participation, and create stronger long-term structures.</p></div>
+          <p style="margin:0 0 18px; color:#4f4a41; font-size:17px;">The focus is practical and results-driven: helping clubs, coaches, committees, academies, and tennis leaders see what is being missed, prioritise what matters most, and move forward with greater confidence.</p>
+          <div class="mini-list">
+            <div><span>30+ years in tennis and sport</span></div>
+            <div><span>LTA Level 4 Licensed Tennis Coach</span></div>
+            <div><span>Built and led programmes across the UK and internationally</span></div>
+            <div><span>Built on programme growth, operational leadership, and coach development</span></div>
+          </div></div>
+      </div>
+    </section>
+
+    <section class="section alt" id="testimonials">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Testimonials</div>
+          <h2>Trusted by Clubs, Coaches, and Tennis Leaders</h2>
+          <p>Clearer direction, sharper decisions, and more commercially useful insight.</p></div>
+        <div class="quote-grid">
+          <article class="quote">
+            <p>Rob identified opportunities we had not seen and gave us a much clearer path forward. The value was in the clarity as much as the recommendations.</p>
+            <strong>Club Chairman • Community Tennis Club, Northern England</strong>
+          </article>
+          <article class="quote">
+            <p>The insight was direct, practical, and commercially useful. It helped us look at our offer in a very different way.</p>
+            <strong>Head of Tennis • Regional Tennis</strong>
+          </article>
+          <article class="quote">
+            <p>Even the early conversation gave me more clarity than I had been able to create on my own. It immediately felt worthwhile.</p>
+            <strong>Tennis Company owner</strong>
+          </article></div>
+      </div>
+    </section>
+
+    <section class="section dark" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Common Questions</div>
+          <h2>Questions People Often Ask Before Taking the Next Step</h2>
+          <p>Clear answers before you decide how you want to move forward.</p></div>
+        <div class="faq-list">
+          <details>
+            <summary>Who is this most useful for?<span>+</span></summary>
+            <p>This is designed for clubs, coaches, academies, programme leaders, committee members, and tennis businesses that want to improve revenue, retention, performance, or commercial decision-making.</p>
+          </details>
+          <details>
+            <summary>What happens on the discovery call?<span>+</span></summary>
+            <p>The call is a focused conversation to understand your current position, discuss what you want to improve, and decide whether a premium audit is the right next step.</p>
+          </details>
+          <details>
+            <summary>Is the audit only for the UK?<span>+</span></summary>
+            <p>No. The audit is suitable for tennis businesses in different markets, with commercially useful thinking that can be applied more broadly.</p>
+          </details>
+          <details>
+            <summary>What happens after payment?<span>+</span></summary>
+            <p>Once payment is complete, your place is confirmed and Rob begins reviewing your submission and preparing for the next stage of the process.</p>
+          </details></div>
+      </div>
+    </section>
+
+    <section class="section dark" id="contact" style="padding-top:64px;">
+      <div class="container">
+        <div class="final-cta">
+          <div>
+            <h3>Ready to Strengthen Participation, Retention, and Growth Before Drift Costs More?</h3>
+            <p>Start with a discovery call or apply directly for the premium audit. A clear outside view often reveals the commercial opportunities that day-to-day operations keep hidden.</p></div>
+          <div class="final-actions">
+            <a class="btn btn-primary" href="https://calendly.com/robnorrisdiscoverycall/30min" target="_blank" rel="noopener">Book Discovery Call</a>
+            <a class="btn btn-secondary" href="#audit-enquiry">Apply for Audit</a></div>
+        </div>
+
+        <div class="section-head" style="margin:56px 0 0; max-width:800px;">
+          <div class="kicker">Contact</div>
+          <h2>Get in Touch</h2>
+          <p>Whether you want to start with a discovery call, ask a question, or explore whether the premium audit is right for you, you can get in touch directly.</p></div>
+        <div class="contact-row">
+          <a class="contact-pill" href="mailto:robnorris125@google.com?subject=Website%20Enquiry%20%7C%20Rob%20Norris%20Consulting&body=Hello%20Rob%2C%0A%0AI%20am%20getting%20in%20touch%20via%20your%20website.%0A%0AName%3A%0AOrganisation%3A%0ARole%3A%0ACountry%3A%0AWhat%20I%20would%20like%20help%20with%3A%0A%0ABest%20regards%2C">
+            <div class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></div>
+            <div class="contact-copy">
+              <div class="label">Email</div>
+              <div class="value"></div>
+            </div>
+          </a>
+          <a class="contact-pill" href="https://wa.me/447407841336" target="_blank" rel="noopener">
+            <div class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.05 4.94A9.87 9.87 0 0 0 12.03 2C6.59 2 2.16 6.42 2.16 11.86c0 1.74.45 3.44 1.31 4.94L2 22l5.35-1.4a9.84 9.84 0 0 0 4.68 1.2h.01c5.44 0 9.86-4.43 9.86-9.87 0-2.64-1.03-5.12-2.85-6.99Zm-7.02 15.2h-.01a8.18 8.18 0 0 1-4.16-1.13l-.3-.18-3.18.83.85-3.1-.2-.32a8.15 8.15 0 0 1-1.25-4.38c0-4.5 3.66-8.16 8.17-8.16 2.18 0 4.23.85 5.77 2.39a8.1 8.1 0 0 1 2.38 5.77c0 4.5-3.66 8.18-8.17 8.18Zm4.48-6.1c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1-.37-1.91-1.18-.71-.64-1.18-1.43-1.32-1.67-.14-.24-.02-.37.1-.49.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.68 2.56 4.08 3.59.57.25 1.02.4 1.37.51.58.18 1.1.15 1.52.09.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg></div>
+            <div class="contact-copy">
+              <div class="label">WhatsApp</div>
+              <div class="value"></div>
+            </div>
+          </a>
+          <a class="contact-pill" href="https://www.linkedin.com/in/rob-norrisuk/" target="_blank" rel="noopener">
+            <div class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H3.56V19h3.38V8.5Zm.22-3.24c0-1.02-.77-1.76-1.91-1.76-1.12 0-1.9.74-1.9 1.76 0 1 .76 1.76 1.86 1.76h.02c1.15 0 1.93-.76 1.93-1.76ZM20.44 19h-3.38v-5.62c0-1.41-.5-2.38-1.76-2.38-.96 0-1.53.64-1.78 1.26-.09.22-.12.53-.12.84V19H10V8.5h3.4v1.43c.45-.7 1.26-1.69 3.08-1.69 2.25 0 3.96 1.47 3.96 4.64V19Z"/></svg></div>
+            <div class="contact-copy">
+              <div class="label">LinkedIn</div>
+              <div class="value"></div>
+            </div>
+          </a></div>
+      </div>
+    </section>
+  </main>
+
+  
+<footer>
+  <div class="footer-inner footer-two-col">
+    <div class="footer-left">
+      <div class="footer-brand">Rob Norris Consulting</div>
+      <div class="footer-tagline">Participation, retention, and growth for tennis businesses</div>
+    </div>
+    <div class="footer-right">
+      <div class="footer-copy">© 2026 Rob Norris Consulting. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+
+  <script>
+    const stripeLinks = {
+      GBP: 'https://buy.stripe.com/cNi3cwb105Tx89o8SZco003',
+      USD: 'https://buy.stripe.com/5kQ3cwglkgybexMedjco002',
+      EUR: 'https://buy.stripe.com/aFa00kc5495J89ob17co001',
+      AUD: 'https://buy.stripe.com/7sYcN6c543Lp2P4edjco000'
+    };
+
+    const currencyDisplay = {
+      GBP: '£495',
+      USD: '$495',
+      EUR: '€495',
+      AUD: 'A$495'
+    };
+
+    const auditForm = document.getElementById('auditForm');
+    const auditSuccess = document.getElementById('auditSuccess');
+    const displayPrice = document.getElementById('displayPrice');
+    const currencySelect = document.getElementById('currency');
+    const currencyChips = document.querySelectorAll('#currencyChips .chip');
+    const selectedCurrencySummary = document.getElementById('selectedCurrencySummary');
+
+    function setCurrency(currency) {
+      if (!currencyDisplay[currency]) return;
+      displayPrice.textContent = currencyDisplay[currency];
+      if (currencySelect) currencySelect.value = currency;
+      if (selectedCurrencySummary) {
+        selectedCurrencySummary.textContent = `Selected currency: ${currency} • Investment: ${currencyDisplay[currency]}`;
+      }
+      currencyChips.forEach((chip) => {
+        chip.classList.toggle('active', chip.dataset.currency === currency);
+      });
+    }
+
+    currencyChips.forEach((chip) => {
+      chip.addEventListener('click', function() {
+        setCurrency(this.dataset.currency);
+      });
+    });
+
+    if (currencySelect) {
+      currencySelect.addEventListener('change', function() {
+        if (this.value) setCurrency(this.value);
+      });
+    }
+
+    setCurrency('GBP');
+
+    auditForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const organisation = document.getElementById('organisation').value.trim();
+      const role = document.getElementById('role').value.trim();
+      const country = document.getElementById('country').value.trim();
+      const currency = document.getElementById('currency').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const goals = document.getElementById('goals').value.trim();
+      const challenges = document.getElementById('challenges').value.trim();
+
+      if (!email || !phone || !currency) {
+        alert('Please complete your email address, phone or WhatsApp number, and preferred currency before continuing to payment.');
+        return;
+      }
+
+      const redirectUrl = stripeLinks[currency];
+      if (!redirectUrl) {
+        alert('Please choose a valid currency before continuing.');
+        return;
+      }
+
+      const enquiry = {
+        name,
+        email,
+        organisation,
+        role,
+        country,
+        currency,
+        phone,
+        goals,
+        challenges,
+        submittedAt: new Date().toISOString()
+      };
+
+      try {
+        localStorage.setItem('robnorris_audit_enquiry', JSON.stringify(enquiry));
+      } catch (error) {
+        console.warn('Could not store audit enquiry locally.', error);
+      }
+
+      auditSuccess.style.display = 'block';
+      setTimeout(() => {
+        window.location.href = redirectUrl;
+      }, 850);
+    });
+  </script>
+</body>
+</html>
